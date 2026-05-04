@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RotateCcw, Ruler, AlertCircle } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './styles.css';
 
 function getTrachealSize(tw) {
@@ -72,12 +73,14 @@ function App() {
   ];
 
   return (
-    <main className="page">
-      <section className="hero">
-        <div className="pill"><Ruler size={16} /> Left-sided DLT sizing aid</div>
-        <h1>DLT Size Calculator</h1>
-        <p>Enter tracheal width from CXR and/or bronchial diameter from CT. The calculator reproduces the table-based left-sided DLT size recommendation.</p>
-      </section>
+    <>
+      <SpeedInsights />
+      <main className="page">
+        <section className="hero">
+          <div className="pill"><Ruler size={16} /> Left-sided DLT sizing aid</div>
+          <h1>DLT Size Calculator</h1>
+          <p>Enter tracheal width from CXR and/or bronchial diameter from CT. The calculator reproduces the table-based left-sided DLT size recommendation.</p>
+        </section>
 
       <section className="grid">
         <div className="card">
@@ -176,6 +179,7 @@ function App() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 
